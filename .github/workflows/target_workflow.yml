@@ -30,4 +30,8 @@ jobs:
           version=${{ github.event.client_payload.version }}
           echo "Version: $version"
 
+          # also 
+          myref=${{ github.event.client_payload.sha }} 
+          echo "MyRef: $myref"
+
       # continue with other workflow steps...
