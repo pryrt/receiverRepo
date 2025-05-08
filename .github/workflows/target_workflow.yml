@@ -1,8 +1,12 @@
 name: My Target Workflow
 
 on:
+  # remote controlled
   repository_dispatch:
     types: [trigger-workflow]
+
+  # on local demand
+  workflow_dispatch:
     
 jobs:
   build:
