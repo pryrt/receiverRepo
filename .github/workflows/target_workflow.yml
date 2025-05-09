@@ -4,15 +4,15 @@ on:
   # remote controlled
   repository_dispatch:
     types: [trigger-workflow]
+
+  # on local demand
+  workflow_dispatch:
     inputs:
       in_opt:
         description: optional input
         required: false
         type: string
         default: '<default>'
-
-  # on local demand
-  workflow_dispatch:
     
 jobs:
   build:
@@ -45,11 +45,11 @@ jobs:
           echo "MyRef: $myref"
 
           # inputs?
-          myin=${{github.event.inputs.target_service}}
+          myin=${{github.event.inputs.in_opt}}
           echo "myIn: $myin"
 
           # full event?
           echo "Can i print the whole event?"
-          echo "${{github.event}}"
+          echo "${{ toJson(github.event) }}"
 
       # continue with other workflow steps...
