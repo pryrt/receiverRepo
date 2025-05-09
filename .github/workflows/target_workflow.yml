@@ -48,4 +48,8 @@ jobs:
           myin=${{github.event.inputs.target_service}}
           echo "myIn: $myin"
 
+          # full event?
+          echo "Can i print the whole event?"
+          echo "${{github.event}}"
+
       # continue with other workflow steps...
