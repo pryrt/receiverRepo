@@ -12,7 +12,7 @@ on:
         description: optional input
         required: false
         type: string
-        default: '<default>'
+        default: '::default::'
     
 jobs:
   build:
@@ -45,7 +45,7 @@ jobs:
           echo "MyRef: $myref"
 
           # inputs?
-          myin=${{github.event.inputs.in_opt}}
+          myin="${{github.event.inputs.in_opt}}"
           echo "myIn: $myin"
 
           # full event?
