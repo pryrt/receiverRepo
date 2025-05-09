@@ -22,16 +22,20 @@ jobs:
 
       - name: Extract Service Name & Version
         run: |
-          # parse service name from payload
-          service_name=${{ github.event.client_payload.service }}
-          echo "Service Name: $service_name"
+          ## parse service name from payload
+          #service_name=${{ github.event.client_payload.service }}
+          #echo "Service Name: $service_name"
 
-          # parse version from payload
-          version=${{ github.event.client_payload.version }}
-          echo "Version: $version"
+          ## parse version from payload
+          #version=${{ github.event.client_payload.version }}
+          #echo "Version: $version"
+
+          ## also 
+          #mysha=${{ github.event.client_payload.sha }} 
+          #echo "MySHA: $mysha"
 
           # also 
-          myref=${{ github.event.client_payload.sha }} 
+          myref=${{ github.event.client_payload.ref }} 
           echo "MyRef: $myref"
 
       # continue with other workflow steps...
